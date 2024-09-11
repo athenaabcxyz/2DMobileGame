@@ -1,2 +1,2 @@
-# 2DMobileGame
-Create a mobile game intergrating ECS techs.
+# 2DDungeonRoguelike
+This is the project for learning Unity Engine at beginer-intermediate levels.

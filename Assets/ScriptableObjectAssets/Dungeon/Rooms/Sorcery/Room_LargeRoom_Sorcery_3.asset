@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2708e4084c4a1534ba646096300f778c, type: 3}
+  m_Name: Room_LargeRoom_Sorcery_3
+  m_EditorClassIdentifier: 
+  guid: 46204f012075f9044bf5e6f069f9c46c
+  prefab: {fileID: 4327421925113694216, guid: e2546f369d303f74da21f4b860db53c0, type: 3}
+  previousPrefab: {fileID: 4327421925113694216, guid: e2546f369d303f74da21f4b860db53c0, type: 3}
+  roomNodeType: {fileID: 11400000, guid: b13251ff4c34a00479ba22d000f694f7, type: 2}
+  lowerBounds: {x: -22, y: -6}
+  upperBounds: {x: 66, y: 79}
+  doorwayList:
+  - position: {x: 23, y: 79}
+    orientation: 0
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 20, y: 79}
+    doorwayCopyTileWidth: 5
+    doorwayCopyTileHeight: 9
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: 5, y: -6}
+    orientation: 2
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 2, y: -2}
+    doorwayCopyTileWidth: 5
+    doorwayCopyTileHeight: 5
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: 66, y: 9}
+    orientation: 1
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 59, y: 15}
+    doorwayCopyTileWidth: 8
+    doorwayCopyTileHeight: 8
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: -21, y: 54}
+    orientation: 3
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: -21, y: 60}
+    doorwayCopyTileWidth: 7
+    doorwayCopyTileHeight: 8
+    isConnected: 0
+    isUnavailable: 0
+  spawnPositionArray:
+  - {x: 11, y: 65}
+  - {x: 22, y: 67}
+  - {x: 52, y: 67}
+  - {x: -5, y: 54}
+  - {x: 26, y: 54}
+  - {x: 53, y: 55}
+  - {x: -6, y: 38}
+  - {x: 25, y: 38}
+  - {x: 55, y: 40}
+  - {x: -8, y: 15}
+  - {x: 16, y: 16}
+  - {x: -6, y: 3}
+  - {x: 16, y: 2}
+  - {x: 30, y: 16}
+  - {x: 52, y: 16}
+  - {x: 34, y: 4}
+  - {x: 54, y: 3}

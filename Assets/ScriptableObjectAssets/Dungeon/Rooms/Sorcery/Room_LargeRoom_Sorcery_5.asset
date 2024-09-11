@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2708e4084c4a1534ba646096300f778c, type: 3}
+  m_Name: Room_LargeRoom_Sorcery_5
+  m_EditorClassIdentifier: 
+  guid: bdb3602692ee96e4887c5a6b3ecdfa37
+  prefab: {fileID: 4327421925113694216, guid: 141f51d0b3eb42c42aa196a721650e96, type: 3}
+  previousPrefab: {fileID: 4327421925113694216, guid: 141f51d0b3eb42c42aa196a721650e96, type: 3}
+  roomNodeType: {fileID: 11400000, guid: b13251ff4c34a00479ba22d000f694f7, type: 2}
+  lowerBounds: {x: -11, y: -4}
+  upperBounds: {x: 57, y: 70}
+  doorwayList:
+  - position: {x: 23, y: 70}
+    orientation: 0
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 20, y: 70}
+    doorwayCopyTileWidth: 6
+    doorwayCopyTileHeight: 9
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: 23, y: -4}
+    orientation: 2
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 20, y: 0}
+    doorwayCopyTileWidth: 5
+    doorwayCopyTileHeight: 5
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: 57, y: 35}
+    orientation: 1
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 54, y: 41}
+    doorwayCopyTileWidth: 4
+    doorwayCopyTileHeight: 8
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: -11, y: 35}
+    orientation: 3
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: -11, y: 41}
+    doorwayCopyTileWidth: 4
+    doorwayCopyTileHeight: 8
+    isConnected: 0
+    isUnavailable: 0
+  spawnPositionArray:
+  - {x: 4, y: 55}
+  - {x: 23, y: 59}
+  - {x: 43, y: 54}
+  - {x: -3, y: 37}
+  - {x: 27, y: 40}
+  - {x: 47, y: 37}
+  - {x: -1, y: 21}
+  - {x: 22, y: 22}
+  - {x: 47, y: 22}
+  - {x: 4, y: 7}
+  - {x: 23, y: 6}
+  - {x: 45, y: 8}
