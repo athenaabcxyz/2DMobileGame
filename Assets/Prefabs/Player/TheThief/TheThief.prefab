@@ -123,10 +123,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheThief
       objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.18444446
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.37008545
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654882, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4886237443564654883, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4886237444538158119, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -143,5 +195,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7452092265214714703, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
+      propertyPath: movementDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: 167bc016506fc574a87c97d32a102ad3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07626fcdb44819245851b34ee3d8c4b0, type: 3}
