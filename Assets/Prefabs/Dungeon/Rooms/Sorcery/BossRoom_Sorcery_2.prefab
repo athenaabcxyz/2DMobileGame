@@ -20426,6 +20426,7 @@ GameObject:
   - component: {fileID: 781279090519665528}
   - component: {fileID: 7832768966227593537}
   - component: {fileID: -4026947705735788985}
+  - component: {fileID: 2847032774236687824}
   m_Layer: 12
   m_Name: BossRoom_Sorcery_2
   m_TagString: Untagged
@@ -20497,6 +20498,18 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+--- !u!114 &2847032774236687824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969719553655747264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee43d1cce0924c49848f833da77970f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5167245005553054311
 GameObject:
   m_ObjectHideFlags: 0
