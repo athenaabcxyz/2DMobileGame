@@ -26,3 +26,6 @@ This is the project for learning Unity Engine at beginner-intermediate levels.
   + Fade out visual behind the door when closed
   + Appear the visual behind the door when open
 
+*Update 1-11-2023:
+- Implement object pooling
+

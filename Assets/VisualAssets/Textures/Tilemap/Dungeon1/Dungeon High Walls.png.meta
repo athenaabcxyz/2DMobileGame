@@ -198,7 +198,7 @@ TextureImporter:
       213: 5269818794583433760
     second: Dungeon 1 High Walls_64
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -215,12 +215,10 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -230,8 +228,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
-    mipBias: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -259,8 +257,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -272,7 +268,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -285,7 +280,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -298,33 +292,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1705,74 +1672,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Dungeon 1 High Walls_0: 3036746100181579697
-      Dungeon 1 High Walls_1: -7999550615675256579
-      Dungeon 1 High Walls_10: 6079869452629292648
-      Dungeon 1 High Walls_11: -2823793859743190121
-      Dungeon 1 High Walls_12: 9207512987882845186
-      Dungeon 1 High Walls_13: -8804762981622312294
-      Dungeon 1 High Walls_14: -341575661699520979
-      Dungeon 1 High Walls_15: 4076947480121420376
-      Dungeon 1 High Walls_16: 3567369640769841821
-      Dungeon 1 High Walls_17: -7394495034452208574
-      Dungeon 1 High Walls_18: -5631746970404674005
-      Dungeon 1 High Walls_19: -2955126684680658126
-      Dungeon 1 High Walls_2: 2671091562282450746
-      Dungeon 1 High Walls_20: 146049216457321663
-      Dungeon 1 High Walls_21: 1252174583896564547
-      Dungeon 1 High Walls_22: 7839539049177881692
-      Dungeon 1 High Walls_23: 1345617968145895848
-      Dungeon 1 High Walls_24: -4326778650355921689
-      Dungeon 1 High Walls_25: -4550147018219133983
-      Dungeon 1 High Walls_26: 7432878428624432890
-      Dungeon 1 High Walls_27: 6994688908721363272
-      Dungeon 1 High Walls_28: -2687533210925379300
-      Dungeon 1 High Walls_29: -4266302662708524910
-      Dungeon 1 High Walls_3: -2982034557458559418
-      Dungeon 1 High Walls_30: 4886641921695953571
-      Dungeon 1 High Walls_31: -8095321390171540040
-      Dungeon 1 High Walls_32: -4584360170007096330
-      Dungeon 1 High Walls_33: 4607299244629657284
-      Dungeon 1 High Walls_34: -2933424230735740277
-      Dungeon 1 High Walls_35: 1325166693627204044
-      Dungeon 1 High Walls_36: 599052971339374214
-      Dungeon 1 High Walls_37: -3931264134150562887
-      Dungeon 1 High Walls_38: 2088602558334994648
-      Dungeon 1 High Walls_39: 563482426824680733
-      Dungeon 1 High Walls_4: -6406311708595012017
-      Dungeon 1 High Walls_40: -428406868133857279
-      Dungeon 1 High Walls_41: -4745668866317694042
-      Dungeon 1 High Walls_42: 5606085987406661476
-      Dungeon 1 High Walls_43: -3970912429369030877
-      Dungeon 1 High Walls_44: -1077565244261554776
-      Dungeon 1 High Walls_45: -2222402921657089539
-      Dungeon 1 High Walls_46: 3104879432738221258
-      Dungeon 1 High Walls_47: 1484233655816580627
-      Dungeon 1 High Walls_48: -2645198739732945014
-      Dungeon 1 High Walls_49: 7791152568621325071
-      Dungeon 1 High Walls_5: 1875806204153008057
-      Dungeon 1 High Walls_50: 6313372493687139127
-      Dungeon 1 High Walls_51: -3928292155961386921
-      Dungeon 1 High Walls_52: 4123137971841024892
-      Dungeon 1 High Walls_53: 5235957403772910553
-      Dungeon 1 High Walls_54: -8318261305793139481
-      Dungeon 1 High Walls_55: 6047634370730076389
-      Dungeon 1 High Walls_56: 2541938620693559374
-      Dungeon 1 High Walls_57: 1705958648289636066
-      Dungeon 1 High Walls_58: -6374587676868579800
-      Dungeon 1 High Walls_59: 1171754759871753696
-      Dungeon 1 High Walls_6: 6794082933897484535
-      Dungeon 1 High Walls_60: -2469295188941256005
-      Dungeon 1 High Walls_61: -2416791543845659080
-      Dungeon 1 High Walls_62: -2392213005114708777
-      Dungeon 1 High Walls_63: 4076876370588076577
-      Dungeon 1 High Walls_64: 5269818794583433760
-      Dungeon 1 High Walls_7: 1691295983165104329
-      Dungeon 1 High Walls_8: -5680316342589752016
-      Dungeon 1 High Walls_9: -15162080864443710
-  mipmapLimitGroupName: 
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -81,7 +81,7 @@ TextureImporter:
       213: -8236551097942277068
     second: Dungeon 1 Just Walls 1 _25
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -98,12 +98,10 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -113,8 +111,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
-    mipBias: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -142,8 +140,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -155,7 +151,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -168,7 +163,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -181,33 +175,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -769,35 +736,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Dungeon 1 Just Walls 1 _0: 6162070526085049777
-      Dungeon 1 Just Walls 1 _1: -4495473622680796116
-      Dungeon 1 Just Walls 1 _10: 3871412518338856150
-      Dungeon 1 Just Walls 1 _11: -239326276606752776
-      Dungeon 1 Just Walls 1 _12: 7440442271893520993
-      Dungeon 1 Just Walls 1 _13: -718124497160432863
-      Dungeon 1 Just Walls 1 _14: 3989321126763408078
-      Dungeon 1 Just Walls 1 _15: 892792597321684573
-      Dungeon 1 Just Walls 1 _16: 3411486731330871778
-      Dungeon 1 Just Walls 1 _17: 6323204992116993556
-      Dungeon 1 Just Walls 1 _18: 5064580310575585611
-      Dungeon 1 Just Walls 1 _19: -3081454373881922583
-      Dungeon 1 Just Walls 1 _2: 1615279105487152757
-      Dungeon 1 Just Walls 1 _20: 4172561022056542921
-      Dungeon 1 Just Walls 1 _21: 42803655206434312
-      Dungeon 1 Just Walls 1 _22: 4846777978911229701
-      Dungeon 1 Just Walls 1 _23: 8601729037526228124
-      Dungeon 1 Just Walls 1 _24: -2652138618197243649
-      Dungeon 1 Just Walls 1 _25: -8236551097942277068
-      Dungeon 1 Just Walls 1 _3: 5605824068522982929
-      Dungeon 1 Just Walls 1 _4: 5069729331723833387
-      Dungeon 1 Just Walls 1 _5: 8541926092236651233
-      Dungeon 1 Just Walls 1 _6: 5804801839284477219
-      Dungeon 1 Just Walls 1 _7: 2199314040938421935
-      Dungeon 1 Just Walls 1 _8: 8372050437780869969
-      Dungeon 1 Just Walls 1 _9: -1250444574793123447
-  mipmapLimitGroupName: 
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
