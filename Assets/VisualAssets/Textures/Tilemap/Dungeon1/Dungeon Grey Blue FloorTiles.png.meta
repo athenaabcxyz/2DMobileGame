@@ -291,7 +291,7 @@ TextureImporter:
       213: 8343062654255717588
     second: Dungeon 1 Grey Blue FloorTiles_95
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -308,10 +308,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -321,8 +323,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -350,6 +352,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -361,6 +365,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -373,6 +378,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -385,6 +391,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2416,9 +2449,105 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Dungeon 1 Grey Blue FloorTiles_0: 4447544953748531885
+      Dungeon 1 Grey Blue FloorTiles_1: 7889712107559110725
+      Dungeon 1 Grey Blue FloorTiles_10: 315116290407194049
+      Dungeon 1 Grey Blue FloorTiles_11: -6216574612444931914
+      Dungeon 1 Grey Blue FloorTiles_12: 1311790737047600909
+      Dungeon 1 Grey Blue FloorTiles_13: -1624220171234167695
+      Dungeon 1 Grey Blue FloorTiles_14: -2786616226488564432
+      Dungeon 1 Grey Blue FloorTiles_15: -5473904693087217661
+      Dungeon 1 Grey Blue FloorTiles_16: -8437179021390008265
+      Dungeon 1 Grey Blue FloorTiles_17: -7884084437948979564
+      Dungeon 1 Grey Blue FloorTiles_18: -5125405742281951745
+      Dungeon 1 Grey Blue FloorTiles_19: -6564022192571391180
+      Dungeon 1 Grey Blue FloorTiles_2: -9114218010320369014
+      Dungeon 1 Grey Blue FloorTiles_20: -8161245302076366625
+      Dungeon 1 Grey Blue FloorTiles_21: -1204574415092940296
+      Dungeon 1 Grey Blue FloorTiles_22: 6531926155698544796
+      Dungeon 1 Grey Blue FloorTiles_23: 8464623965901358713
+      Dungeon 1 Grey Blue FloorTiles_24: -7681029220278754239
+      Dungeon 1 Grey Blue FloorTiles_25: 4090803357112364463
+      Dungeon 1 Grey Blue FloorTiles_26: -6290652440441895363
+      Dungeon 1 Grey Blue FloorTiles_27: -5304559581440548062
+      Dungeon 1 Grey Blue FloorTiles_28: -7541761205100127888
+      Dungeon 1 Grey Blue FloorTiles_29: -8791944886584250180
+      Dungeon 1 Grey Blue FloorTiles_3: 6079387690313596609
+      Dungeon 1 Grey Blue FloorTiles_30: -5804165307027272594
+      Dungeon 1 Grey Blue FloorTiles_31: -6235474097566944171
+      Dungeon 1 Grey Blue FloorTiles_32: -2105502177270765041
+      Dungeon 1 Grey Blue FloorTiles_33: -5923550984377191380
+      Dungeon 1 Grey Blue FloorTiles_34: 1352732160383662221
+      Dungeon 1 Grey Blue FloorTiles_35: -5719479949266571937
+      Dungeon 1 Grey Blue FloorTiles_36: -1541661110354720645
+      Dungeon 1 Grey Blue FloorTiles_37: -2560866235012622273
+      Dungeon 1 Grey Blue FloorTiles_38: 8729997863859114083
+      Dungeon 1 Grey Blue FloorTiles_39: -2421779326365323385
+      Dungeon 1 Grey Blue FloorTiles_4: 3030872535547399396
+      Dungeon 1 Grey Blue FloorTiles_40: 8352226854836379435
+      Dungeon 1 Grey Blue FloorTiles_41: -2881625937868436251
+      Dungeon 1 Grey Blue FloorTiles_42: -7016770237956551791
+      Dungeon 1 Grey Blue FloorTiles_43: 1719976561195974346
+      Dungeon 1 Grey Blue FloorTiles_44: -1837687748328765566
+      Dungeon 1 Grey Blue FloorTiles_45: -847089501929509998
+      Dungeon 1 Grey Blue FloorTiles_46: -4456530738273303558
+      Dungeon 1 Grey Blue FloorTiles_47: 8525862660805758980
+      Dungeon 1 Grey Blue FloorTiles_48: -9164133923709698380
+      Dungeon 1 Grey Blue FloorTiles_49: -1493684641920232967
+      Dungeon 1 Grey Blue FloorTiles_5: 7004090353008980292
+      Dungeon 1 Grey Blue FloorTiles_50: -1310527407152314136
+      Dungeon 1 Grey Blue FloorTiles_51: 7373864946215628033
+      Dungeon 1 Grey Blue FloorTiles_52: 7337889566475299396
+      Dungeon 1 Grey Blue FloorTiles_53: -4079692413137260178
+      Dungeon 1 Grey Blue FloorTiles_54: 191566126913304426
+      Dungeon 1 Grey Blue FloorTiles_55: -743900497627408853
+      Dungeon 1 Grey Blue FloorTiles_56: -1795555693749960232
+      Dungeon 1 Grey Blue FloorTiles_57: -4455341558616740914
+      Dungeon 1 Grey Blue FloorTiles_58: -446588009943498969
+      Dungeon 1 Grey Blue FloorTiles_59: 5551437755894340120
+      Dungeon 1 Grey Blue FloorTiles_6: 925089261209211627
+      Dungeon 1 Grey Blue FloorTiles_60: -2348054869996214634
+      Dungeon 1 Grey Blue FloorTiles_61: -1018410103236157313
+      Dungeon 1 Grey Blue FloorTiles_62: 7762894707831048408
+      Dungeon 1 Grey Blue FloorTiles_63: 791067228609909679
+      Dungeon 1 Grey Blue FloorTiles_64: 2246129609774580930
+      Dungeon 1 Grey Blue FloorTiles_65: 1030887453350936796
+      Dungeon 1 Grey Blue FloorTiles_66: -5725688927389871799
+      Dungeon 1 Grey Blue FloorTiles_67: 503809461006092288
+      Dungeon 1 Grey Blue FloorTiles_68: 6479925781785842030
+      Dungeon 1 Grey Blue FloorTiles_69: -4548264998621217947
+      Dungeon 1 Grey Blue FloorTiles_7: 2580796408521108737
+      Dungeon 1 Grey Blue FloorTiles_70: -3782306509387158577
+      Dungeon 1 Grey Blue FloorTiles_71: -392805832253475184
+      Dungeon 1 Grey Blue FloorTiles_72: 5230324174914615990
+      Dungeon 1 Grey Blue FloorTiles_73: -1777121073743559560
+      Dungeon 1 Grey Blue FloorTiles_74: -3524268420103490623
+      Dungeon 1 Grey Blue FloorTiles_75: -5688269714268326121
+      Dungeon 1 Grey Blue FloorTiles_76: -3572351005321720326
+      Dungeon 1 Grey Blue FloorTiles_77: -2742631706498128413
+      Dungeon 1 Grey Blue FloorTiles_78: -3184114021734412461
+      Dungeon 1 Grey Blue FloorTiles_79: 7030562541529541850
+      Dungeon 1 Grey Blue FloorTiles_8: 4989725107346662471
+      Dungeon 1 Grey Blue FloorTiles_80: 7284117940770659451
+      Dungeon 1 Grey Blue FloorTiles_81: -3933934766646641248
+      Dungeon 1 Grey Blue FloorTiles_82: 3131189769444367159
+      Dungeon 1 Grey Blue FloorTiles_83: 7171386772534762946
+      Dungeon 1 Grey Blue FloorTiles_84: -3484543937599158
+      Dungeon 1 Grey Blue FloorTiles_85: -2993896421632353628
+      Dungeon 1 Grey Blue FloorTiles_86: 8534117475776471456
+      Dungeon 1 Grey Blue FloorTiles_87: 766257503842962628
+      Dungeon 1 Grey Blue FloorTiles_88: -7905777077935247003
+      Dungeon 1 Grey Blue FloorTiles_89: -555826037024868466
+      Dungeon 1 Grey Blue FloorTiles_9: 8772674262003436589
+      Dungeon 1 Grey Blue FloorTiles_90: -983593219820358115
+      Dungeon 1 Grey Blue FloorTiles_91: -4905827811529936881
+      Dungeon 1 Grey Blue FloorTiles_92: 374202174368451682
+      Dungeon 1 Grey Blue FloorTiles_93: -1964420641429972358
+      Dungeon 1 Grey Blue FloorTiles_94: 7729090068161463394
+      Dungeon 1 Grey Blue FloorTiles_95: 8343062654255717588
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

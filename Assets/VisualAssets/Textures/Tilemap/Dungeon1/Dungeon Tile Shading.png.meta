@@ -78,7 +78,7 @@ TextureImporter:
       213: -7941513423152806865
     second: Dungeon 1 Tile Shading_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,10 +95,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -108,8 +110,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -137,6 +139,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -148,6 +152,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -160,6 +165,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -172,6 +178,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -712,9 +745,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Dungeon 1 Tile Shading_0: 1658753269745625591
+      Dungeon 1 Tile Shading_1: 7658886042914453054
+      Dungeon 1 Tile Shading_10: 723439617576006920
+      Dungeon 1 Tile Shading_11: -4031414474249177325
+      Dungeon 1 Tile Shading_12: 1703177182287579706
+      Dungeon 1 Tile Shading_13: -7015429017180335904
+      Dungeon 1 Tile Shading_14: -8376389622320450203
+      Dungeon 1 Tile Shading_15: -1347405158371447619
+      Dungeon 1 Tile Shading_16: 7406408656739333920
+      Dungeon 1 Tile Shading_17: -5519567178822980310
+      Dungeon 1 Tile Shading_18: -1718593457850518339
+      Dungeon 1 Tile Shading_19: 532406355067386523
+      Dungeon 1 Tile Shading_2: 185576905004332669
+      Dungeon 1 Tile Shading_20: -3240697604614551487
+      Dungeon 1 Tile Shading_21: 5892329497277257018
+      Dungeon 1 Tile Shading_22: -5289395896113773731
+      Dungeon 1 Tile Shading_23: -5859552342121352385
+      Dungeon 1 Tile Shading_24: -7941513423152806865
+      Dungeon 1 Tile Shading_3: 8340338141833667478
+      Dungeon 1 Tile Shading_4: -1746284200158345303
+      Dungeon 1 Tile Shading_5: 1175467230528292167
+      Dungeon 1 Tile Shading_6: -3912016595306571608
+      Dungeon 1 Tile Shading_7: -4106400602130954688
+      Dungeon 1 Tile Shading_8: -5815336272071043481
+      Dungeon 1 Tile Shading_9: -6700794805662796169
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNodeTypeList: {fileID: 11400000, guid: 3f572f9faabcd334f8fe9dbe91dacb9b, type: 2}
   currentPlayer: {fileID: 11400000, guid: b5002c4999707a04980cdb39c57f3891, type: 2}
+  soundsMasterMixerGroup: {fileID: -4734643798044506327, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  doorOpenCloseSoundEffect: {fileID: 11400000, guid: 1e92062be743afc43a1a407a81c5788b, type: 2}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
   litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   variableLitShader: {fileID: -6465566751694194690, guid: 280c5b95551fe3341838c67974b3c9b8, type: 3}
+  ammoIconPrefab: {fileID: 5481656491773120187, guid: c3e5e34b6afafd9408e3703b9128ba4f, type: 3}

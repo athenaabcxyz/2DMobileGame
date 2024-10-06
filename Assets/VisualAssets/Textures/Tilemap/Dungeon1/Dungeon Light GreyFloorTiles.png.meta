@@ -291,7 +291,7 @@ TextureImporter:
       213: -214400295249368985
     second: Dungeon 1 Light GreyFloorTiles_95
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -308,10 +308,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -321,8 +323,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -350,6 +352,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -361,6 +365,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -373,6 +378,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -385,6 +391,33 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2416,9 +2449,105 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Dungeon 1 Light GreyFloorTiles_0: 6962024235574432378
+      Dungeon 1 Light GreyFloorTiles_1: -3469639153013416700
+      Dungeon 1 Light GreyFloorTiles_10: -1380133744640104451
+      Dungeon 1 Light GreyFloorTiles_11: 1992854515169707872
+      Dungeon 1 Light GreyFloorTiles_12: 6912346139504665284
+      Dungeon 1 Light GreyFloorTiles_13: -4690837374212519372
+      Dungeon 1 Light GreyFloorTiles_14: 9032580009502328215
+      Dungeon 1 Light GreyFloorTiles_15: -6135218634265372631
+      Dungeon 1 Light GreyFloorTiles_16: 3836543287091468556
+      Dungeon 1 Light GreyFloorTiles_17: -8167420835304841994
+      Dungeon 1 Light GreyFloorTiles_18: -886806711151911853
+      Dungeon 1 Light GreyFloorTiles_19: 3778492018716960314
+      Dungeon 1 Light GreyFloorTiles_2: 7230767979851012275
+      Dungeon 1 Light GreyFloorTiles_20: -6656611166030793658
+      Dungeon 1 Light GreyFloorTiles_21: -9116442590146170757
+      Dungeon 1 Light GreyFloorTiles_22: 718087693099511767
+      Dungeon 1 Light GreyFloorTiles_23: 256396452572333384
+      Dungeon 1 Light GreyFloorTiles_24: 5988044140066055487
+      Dungeon 1 Light GreyFloorTiles_25: 1414193097696209716
+      Dungeon 1 Light GreyFloorTiles_26: 7921791948918745576
+      Dungeon 1 Light GreyFloorTiles_27: 5784071783585228400
+      Dungeon 1 Light GreyFloorTiles_28: -4500314909230099669
+      Dungeon 1 Light GreyFloorTiles_29: 1475079078693426232
+      Dungeon 1 Light GreyFloorTiles_3: -3658912855431561750
+      Dungeon 1 Light GreyFloorTiles_30: 7995698152905349077
+      Dungeon 1 Light GreyFloorTiles_31: -3882597543808361102
+      Dungeon 1 Light GreyFloorTiles_32: -3368681741200034616
+      Dungeon 1 Light GreyFloorTiles_33: 756714243298640510
+      Dungeon 1 Light GreyFloorTiles_34: -3276320060286551089
+      Dungeon 1 Light GreyFloorTiles_35: 1142280471885745493
+      Dungeon 1 Light GreyFloorTiles_36: 1913673906157401993
+      Dungeon 1 Light GreyFloorTiles_37: -6334561973753623820
+      Dungeon 1 Light GreyFloorTiles_38: -3580113466758024261
+      Dungeon 1 Light GreyFloorTiles_39: 4371438269871312877
+      Dungeon 1 Light GreyFloorTiles_4: -804128166861641518
+      Dungeon 1 Light GreyFloorTiles_40: -6534946240794541599
+      Dungeon 1 Light GreyFloorTiles_41: 7743658312286599867
+      Dungeon 1 Light GreyFloorTiles_42: -236703416455007031
+      Dungeon 1 Light GreyFloorTiles_43: -415221327490388965
+      Dungeon 1 Light GreyFloorTiles_44: -2665096081464269094
+      Dungeon 1 Light GreyFloorTiles_45: 1439892713380696586
+      Dungeon 1 Light GreyFloorTiles_46: 8700658286718382455
+      Dungeon 1 Light GreyFloorTiles_47: 2839820411108430931
+      Dungeon 1 Light GreyFloorTiles_48: -2281977527065600458
+      Dungeon 1 Light GreyFloorTiles_49: -7784136461868414990
+      Dungeon 1 Light GreyFloorTiles_5: 2703265861633472090
+      Dungeon 1 Light GreyFloorTiles_50: 2886831673067585322
+      Dungeon 1 Light GreyFloorTiles_51: 5821403641249185799
+      Dungeon 1 Light GreyFloorTiles_52: -4931491750181830517
+      Dungeon 1 Light GreyFloorTiles_53: 3610044945396970395
+      Dungeon 1 Light GreyFloorTiles_54: 5037525864148439797
+      Dungeon 1 Light GreyFloorTiles_55: 2998145119443949474
+      Dungeon 1 Light GreyFloorTiles_56: -6066921842887098117
+      Dungeon 1 Light GreyFloorTiles_57: 1019595906932143297
+      Dungeon 1 Light GreyFloorTiles_58: 8045846248457973520
+      Dungeon 1 Light GreyFloorTiles_59: -2338071127855064962
+      Dungeon 1 Light GreyFloorTiles_6: 7873222272774522170
+      Dungeon 1 Light GreyFloorTiles_60: -8082518874353860806
+      Dungeon 1 Light GreyFloorTiles_61: 2173648951597189249
+      Dungeon 1 Light GreyFloorTiles_62: -5003892740038483104
+      Dungeon 1 Light GreyFloorTiles_63: -1834223136834497383
+      Dungeon 1 Light GreyFloorTiles_64: 1471720627163339865
+      Dungeon 1 Light GreyFloorTiles_65: 2536756882845564297
+      Dungeon 1 Light GreyFloorTiles_66: -4680784396884763467
+      Dungeon 1 Light GreyFloorTiles_67: -6546358628293377156
+      Dungeon 1 Light GreyFloorTiles_68: -5030259167896931310
+      Dungeon 1 Light GreyFloorTiles_69: -5762335144744587192
+      Dungeon 1 Light GreyFloorTiles_7: -7595927470688620164
+      Dungeon 1 Light GreyFloorTiles_70: 3201026181741816196
+      Dungeon 1 Light GreyFloorTiles_71: -390679825096108217
+      Dungeon 1 Light GreyFloorTiles_72: 1114980998705288570
+      Dungeon 1 Light GreyFloorTiles_73: 7097994886798797061
+      Dungeon 1 Light GreyFloorTiles_74: 4327342715393005578
+      Dungeon 1 Light GreyFloorTiles_75: -7004911927133429351
+      Dungeon 1 Light GreyFloorTiles_76: 1047489297942384392
+      Dungeon 1 Light GreyFloorTiles_77: 8284420894386570856
+      Dungeon 1 Light GreyFloorTiles_78: 3725774696649637814
+      Dungeon 1 Light GreyFloorTiles_79: -5548910817109482352
+      Dungeon 1 Light GreyFloorTiles_8: -8681735450699874502
+      Dungeon 1 Light GreyFloorTiles_80: -3082896063331448163
+      Dungeon 1 Light GreyFloorTiles_81: -7728096957749112827
+      Dungeon 1 Light GreyFloorTiles_82: 3185535266414503083
+      Dungeon 1 Light GreyFloorTiles_83: -4295632179309861215
+      Dungeon 1 Light GreyFloorTiles_84: 4086859132145030990
+      Dungeon 1 Light GreyFloorTiles_85: -5238523733524572906
+      Dungeon 1 Light GreyFloorTiles_86: 5941856647493035486
+      Dungeon 1 Light GreyFloorTiles_87: -5354787477644924278
+      Dungeon 1 Light GreyFloorTiles_88: 8036151549895434218
+      Dungeon 1 Light GreyFloorTiles_89: 6379847023544207758
+      Dungeon 1 Light GreyFloorTiles_9: 7148007888738741988
+      Dungeon 1 Light GreyFloorTiles_90: -8580750686556667372
+      Dungeon 1 Light GreyFloorTiles_91: -4506578786895067630
+      Dungeon 1 Light GreyFloorTiles_92: -7646606482365603401
+      Dungeon 1 Light GreyFloorTiles_93: 1346276897027952006
+      Dungeon 1 Light GreyFloorTiles_94: -5314594360432280923
+      Dungeon 1 Light GreyFloorTiles_95: -214400295249368985
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -41,6 +41,19 @@ public static class HelperUtilities
     }
 
     /// <summary>
+    /// Get the direction vector from an angle in degrees
+    /// </summary>
+    /// <returns></returns>
+    public static Vector3 GetDirectionVectorFromAngle(float angle)
+    {
+        Vector3 directionVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0f);
+        return directionVector;
+    }
+
+
+
+
+    /// <summary>
     /// Get AimDirection enum value from the pased in angleDegrees
     /// </summary>
     public static AimDirection GetAimDirection(float angleDegrees)
@@ -86,6 +99,18 @@ public static class HelperUtilities
         return aimDirection;
 
     }
+
+    /// <summary>
+    /// Convert the linear volume scale to decibels
+    /// </summary>
+    public static float LinearToDecibels(int linear)
+    {
+        float linearScaleRange = 20f;
+
+        // formula to convert from the linear scale to the logarithmic decibel scale
+        return Mathf.Log10((float)linear / linearScaleRange) * 20f;
+    }
+
 
 
     /// <summary>

@@ -95,11 +95,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     {
         HandleGameState();
 
-        // For testing
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            gameState = GameState.gameStarted;
-        }
+        //// For testing
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    gameState = GameState.gameStarted;
+        //}
 
     }
 
@@ -168,6 +168,14 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         return player;
     }
 
+
+    /// <summary>
+    /// Get the player minimap icon
+    /// </summary>
+    public Sprite GetPlayerMiniMapIcon()
+    {
+        return playerDetails.playerMiniMapIcon;
+    }
 
 
     /// <summary>
