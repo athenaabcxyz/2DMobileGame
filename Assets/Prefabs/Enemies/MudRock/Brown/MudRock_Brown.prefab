@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0f372b3c644e5ce4a9d95f7f7f25d99a, type: 2}
+    - target: {fileID: 2721886958532987240, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
+      propertyPath: enemyDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ff4a0c0e714e2c43b45264fa66fcb32, type: 2}
     - target: {fileID: 3378373872119664074, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
       propertyPath: m_Size.x
       value: 0.25
@@ -115,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MudRock_Brown
       objectReference: {fileID: 0}
+    - target: {fileID: 5523578991804979054, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
+      propertyPath: movementDetails
+      value: 
+      objectReference: {fileID: 11400000, guid: e286204576be87146b86e872a391e287, type: 2}
     - target: {fileID: 6323716623834929745, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
       propertyPath: m_Sprite
       value: 

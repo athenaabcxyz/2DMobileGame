@@ -113,6 +113,15 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
+    /// Returns the player position
+    /// </summary>
+    public Vector3 GetPlayerPosition()
+    {
+        return transform.position;
+    }
+
+
+    /// <summary>
     /// Add a weapon to the player weapon dictionary
     /// </summary>
     public Weapon AddWeaponToPlayer(WeaponDetailsSO weaponDetails)
