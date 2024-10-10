@@ -40,3 +40,7 @@ This is the project for learning Unity Engine at beginner-intermediate levels.
 *Update 10-10-2024
 - Setup enemies
 - Add vfx
+
+*Update 10-10-2024
+- Setup enemies navigation
+- Setup enemies movement
