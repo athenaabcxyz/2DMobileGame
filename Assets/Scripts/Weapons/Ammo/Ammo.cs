@@ -17,6 +17,7 @@ public class Ammo : MonoBehaviour, IFireable
     private float ammoChargeTimer;
     private bool isAmmoMaterialSet = false;
     private bool overrideAmmoMovement;
+    private bool isColliding = false;
 
     private void Awake()
     {
@@ -38,28 +39,82 @@ public class Ammo : MonoBehaviour, IFireable
             isAmmoMaterialSet = true;
         }
 
-        // Calculate distance vector to move ammo
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-
-        transform.position += distanceVector;
-
-        // Disable after max range reached
-        ammoRange -= distanceVector.magnitude;
-
-        if (ammoRange < 0f)
+        // Don't move ammo if movement has been overriden - e.g. this ammo is part of an ammo pattern
+        if (!overrideAmmoMovement)
         {
-            DisableAmmo();
+            // Calculate distance vector to move ammo
+            Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
+
+            transform.position += distanceVector;
+
+            // Disable after max range reached
+            ammoRange -= distanceVector.magnitude;
+
+            if (ammoRange < 0f)
+            {
+                if (ammoDetails.isPlayerAmmo)
+                {
+                    // no multiplier
+                    StaticEventHandler.CallMultiplierEvent(false);
+                }
+
+                DisableAmmo();
+            }
         }
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // If already colliding with something return
+        if (isColliding) return;
+
+        // Deal Damage To Collision Object
+        DealDamage(collision);
+
         // Show ammo hit effect
         AmmoHitEffect();
 
         DisableAmmo();
     }
+
+    private void DealDamage(Collider2D collision)
+    {
+        Health health = collision.GetComponent<Health>();
+
+        bool enemyHit = false;
+
+        if (health != null)
+        {
+            // Set isColliding to prevent ammo dealing damage multiple times
+            isColliding = true;
+
+            health.TakeDamage(ammoDetails.ammoDamage);
+
+            // Enemy hit
+            if (health.enemy != null)
+            {
+                enemyHit = true;
+            }
+        }
+
+        // If player ammo then update multiplier
+        if (ammoDetails.isPlayerAmmo)
+        {
+            if (enemyHit)
+            {
+                // multiplier
+                StaticEventHandler.CallMultiplierEvent(true);
+            }
+            else
+            {
+                // no multiplier
+                StaticEventHandler.CallMultiplierEvent(false);
+            }
+        }
+
+    }
+
 
     /// <summary>
     /// Initialise the ammo being fired - using the ammodetails, the aimangle, weaponAngle, and
@@ -71,6 +126,9 @@ public class Ammo : MonoBehaviour, IFireable
         #region Ammo
 
         this.ammoDetails = ammoDetails;
+
+        // Initialise isColliding
+        isColliding = false;
 
         // Set fire direction
         SetFireDirection(ammoDetails, aimAngle, weaponAimAngle, weaponAimDirectionVector);

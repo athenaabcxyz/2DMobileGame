@@ -51,7 +51,7 @@ Material:
     - _EmmissionColor: {r: 766.9961, g: 128.50197, b: 0, a: 1}
     - _Speed: {r: 0.5, g: -3, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &3362351788647453296
+--- !u!114 &6625405861429209072
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

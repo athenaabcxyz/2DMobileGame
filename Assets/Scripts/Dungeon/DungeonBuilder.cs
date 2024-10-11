@@ -530,6 +530,8 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         room.lowerBounds = roomTemplate.lowerBounds;
         room.upperBounds = roomTemplate.upperBounds;
         room.spawnPositionArray = roomTemplate.spawnPositionArray;
+        room.enemiesByLevelList = roomTemplate.enemiesByLevelList;
+        room.roomLevelEnemySpawnParametersList = roomTemplate.roomEnemySpawnParametersList;
         room.templateLowerBounds = roomTemplate.lowerBounds;
         room.templateUpperBounds = roomTemplate.upperBounds;
         room.childRoomIDList = CopyStringList(roomNode.childRoomNodeIDList);
@@ -549,6 +551,14 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         {
             room.parentRoomID = roomNode.parentRoomNodeIDList[0];
         }
+
+
+        // If there are no enemies to spawn then default the room to be clear of enemies
+        if (room.GetNumberOfEnemiesToSpawn(GameManager.Instance.GetCurrentDungeonLevel()) == 0)
+        {
+            room.isClearedOfEnemies = true;
+        }
+
 
         return room;
 
@@ -640,6 +650,12 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
             // Save gameobject reference.
             room.instantiatedRoom = instantiatedRoom;
+
+            //// Demo code to set rooms as cleared - except for boss
+            //if (!room.roomNodeType.isBossRoom)
+            //{
+            //    room.isClearedOfEnemies = true;
+            //}
         }
     }
 

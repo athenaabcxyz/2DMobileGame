@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -51,6 +50,26 @@ public class GameResources : MonoBehaviour
     [Tooltip("Door open close sound effect")]
     #endregion Tooltip
     public SoundEffectSO doorOpenCloseSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the table flip sound effect")]
+    #endregion
+    public SoundEffectSO tableFlip;
+    #region Tooltip
+    [Tooltip("Populate with the chest open sound effect")]
+    #endregion
+    public SoundEffectSO chestOpen;
+    #region Tooltip
+    [Tooltip("Populate with the health pickup sound effect")]
+    #endregion
+    public SoundEffectSO healthPickup;
+    #region Tooltip
+    [Tooltip("Populate with the weapon pickup sound effect")]
+    #endregion
+    public SoundEffectSO weaponPickup;
+    #region Tooltip
+    [Tooltip("Populate with the ammo pickup sound effect")]
+    #endregion
+    public SoundEffectSO ammoPickup;
 
     #region Header MATERIALS
     [Space(10)]
@@ -70,6 +89,10 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with the Variable Lit Shader")]
     #endregion
     public Shader variableLitShader;
+    #region Tooltip
+    [Tooltip("Populate with the Materialize Shader")]
+    #endregion
+    public Shader materializeShader;
 
     #region Header SPECIAL TILEMAP TILES
     [Space(10)]
@@ -89,9 +112,30 @@ public class GameResources : MonoBehaviour
     [Header("UI")]
     #endregion
     #region Tooltip
+    [Tooltip("Populate with heart image prefab")]
+    #endregion
+    public GameObject heartPrefab;
+    #region Tooltip
     [Tooltip("Populate with ammo icon prefab")]
     #endregion
     public GameObject ammoIconPrefab;
+
+    #region Header CHESTS
+    [Space(10)]
+    [Header("CHESTS")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Chest item prefab")]
+    #endregion
+    public GameObject chestItemPrefab;
+    #region Tooltip
+    [Tooltip("Populate with heart icon sprite")]
+    #endregion
+    public Sprite heartIcon;
+    #region Tooltip
+    [Tooltip("Populate with bullet icon sprite")]
+    #endregion
+    public Sprite bulletIcon;
 
     #region Validation
 #if UNITY_EDITOR
@@ -102,12 +146,22 @@ public class GameResources : MonoBehaviour
         HelperUtilities.ValidateCheckNullValue(this, nameof(currentPlayer), currentPlayer);
         HelperUtilities.ValidateCheckNullValue(this, nameof(soundsMasterMixerGroup), soundsMasterMixerGroup);
         HelperUtilities.ValidateCheckNullValue(this, nameof(doorOpenCloseSoundEffect), doorOpenCloseSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(tableFlip), tableFlip);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(chestOpen), chestOpen);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(healthPickup), healthPickup);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(ammoPickup), ammoPickup);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(weaponPickup), weaponPickup);
         HelperUtilities.ValidateCheckNullValue(this, nameof(litMaterial), litMaterial);
         HelperUtilities.ValidateCheckNullValue(this, nameof(dimmedMaterial), dimmedMaterial);
         HelperUtilities.ValidateCheckNullValue(this, nameof(variableLitShader), variableLitShader);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(materializeShader), materializeShader);
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(enemyUnwalkableCollisionTilesArray), enemyUnwalkableCollisionTilesArray);
         HelperUtilities.ValidateCheckNullValue(this, nameof(preferredEnemyPathTile), preferredEnemyPathTile);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(heartPrefab), heartPrefab);
         HelperUtilities.ValidateCheckNullValue(this, nameof(ammoIconPrefab), ammoIconPrefab);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(chestItemPrefab), chestItemPrefab);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(heartIcon), heartIcon);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(bulletIcon), bulletIcon);
     }
 
 #endif

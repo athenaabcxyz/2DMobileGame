@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: movementDetails
       value: 
       objectReference: {fileID: 11400000, guid: a7963b460a1458d4380e9026b63019df, type: 2}
+    - target: {fileID: 5727277502374668561, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.91
+      objectReference: {fileID: 0}
     - target: {fileID: 6323716623834929745, guid: 7d9bf5c8e5746c642a787fa527ac3292, type: 3}
       propertyPath: m_Sprite
       value: 

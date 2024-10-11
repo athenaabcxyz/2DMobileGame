@@ -16,7 +16,25 @@ public class InstantiatedRoom : MonoBehaviour
     [HideInInspector] public Tilemap collisionTilemap;
     [HideInInspector] public Tilemap minimapTilemap;
     [HideInInspector] public int[,] aStarMovementPenalty;  // use this 2d array to store movement penalties from the tilemaps to be used in AStar pathfinding
+    [HideInInspector] public int[,] aStarItemObstacles; // use to store position of moveable items that are obstacles
     [HideInInspector] public Bounds roomColliderBounds;
+    [HideInInspector] public List<MoveItem> moveableItemsList = new List<MoveItem>();
+
+    #region Header OBJECT REFERENCES
+
+    [Space(10)]
+    [Header("OBJECT REFERENCES")]
+
+    #endregion Header OBJECT REFERENCES
+
+    #region Tooltip
+
+    [Tooltip("Populate with the environment child placeholder gameobject ")]
+
+    #endregion Tooltip
+
+    [SerializeField] private GameObject environmentGameObject;
+
 
     private BoxCollider2D boxCollider2D;
 
@@ -28,6 +46,13 @@ public class InstantiatedRoom : MonoBehaviour
         roomColliderBounds = boxCollider2D.bounds;
 
     }
+
+    private void Start()
+    {
+        // Update moveable item obstacles array
+        UpdateMoveableObstacles();
+    }
+
 
     // Trigger room changed event when player enters a room
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,6 +78,8 @@ public class InstantiatedRoom : MonoBehaviour
         BlockOffUnusedDoorWays();
 
         AddObstaclesAndPreferredPaths();
+
+        CreateItemObstaclesArray();
 
         AddDoorsToRooms();
 
@@ -334,4 +361,160 @@ public class InstantiatedRoom : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Disable the room trigger collider that is used to trigger when the player enters a room
+    /// </summary>
+    public void DisableRoomCollider()
+    {
+        boxCollider2D.enabled = false;
+    }
+
+    /// <summary>
+    /// Enable the room trigger collider that is used to trigger when the player enters a room
+    /// </summary>
+    public void EnableRoomCollider()
+    {
+        boxCollider2D.enabled = true;
+    }
+
+    public void ActivateEnvironmentGameObjects()
+    {
+        if (environmentGameObject != null)
+            environmentGameObject.SetActive(true);
+    }
+
+    public void DeactivateEnvironmentGameObjects()
+    {
+        if (environmentGameObject != null)
+            environmentGameObject.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// Lock the room doors
+    /// </summary>
+    public void LockDoors()
+    {
+        Door[] doorArray = GetComponentsInChildren<Door>();
+
+        // Trigger lock doors
+        foreach (Door door in doorArray)
+        {
+            door.LockDoor();
+        }
+
+        // Disable room trigger collider
+        DisableRoomCollider();
+    }
+
+    /// <summary>
+    /// Unlock the room doors
+    /// </summary>
+    public void UnlockDoors(float doorUnlockDelay)
+    {
+        StartCoroutine(UnlockDoorsRoutine(doorUnlockDelay));
+    }
+
+    /// <summary>
+    /// Unlock the room doors routine
+    /// </summary>
+    private IEnumerator UnlockDoorsRoutine(float doorUnlockDelay)
+    {
+        if (doorUnlockDelay > 0f)
+            yield return new WaitForSeconds(doorUnlockDelay);
+
+        Door[] doorArray = GetComponentsInChildren<Door>();
+
+        // Trigger open doors
+        foreach (Door door in doorArray)
+        {
+            door.UnlockDoor();
+        }
+
+        // Enable room trigger collider
+        EnableRoomCollider();
+    }
+
+    /// <summary>
+    /// Create Item Obstacles Array
+    /// </summary>
+    private void CreateItemObstaclesArray()
+    {
+        // this array will be populated during gameplay with any moveable obstacles
+        aStarItemObstacles = new int[room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateUpperBounds.y - room.templateLowerBounds.y + 1];
+    }
+
+    /// <summary>
+    /// Initialize Item Obstacles Array With Default AStar Movement Penalty Values
+    /// </summary>
+    private void InitializeItemObstaclesArray()
+    {
+        for (int x = 0; x < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); x++)
+        {
+            for (int y = 0; y < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); y++)
+            {
+                // Set default movement penalty for grid sqaures
+                aStarItemObstacles[x, y] = Settings.defaultAStarMovementPenalty;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Update the array of moveable obstacles
+    /// </summary>
+    public void UpdateMoveableObstacles()
+    {
+        InitializeItemObstaclesArray();
+
+        foreach (MoveItem moveItem in moveableItemsList)
+        {
+            Vector3Int colliderBoundsMin = grid.WorldToCell(moveItem.boxCollider2D.bounds.min);
+            Vector3Int colliderBoundsMax = grid.WorldToCell(moveItem.boxCollider2D.bounds.max);
+
+            // Loop through and add moveable item collider bounds to obstacle array
+            for (int i = colliderBoundsMin.x; i <= colliderBoundsMax.x; i++)
+            {
+                for (int j = colliderBoundsMin.y; j <= colliderBoundsMax.y; j++)
+                {
+                    aStarItemObstacles[i - room.templateLowerBounds.x, j - room.templateLowerBounds.y] = 0;
+                }
+            }
+        }
+    }
+
+    ///// <summary>
+    ///// This is used for debugging - shows the position of the table obstacles. 
+    ///// (MUST BE COMMENTED OUT BEFORE UPDATING ROOM PREFABS)
+    ///// </summary>
+    //private void OnDrawGizmos()
+    //{
+
+    //    for (int i = 0; i < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); i++)
+    //    {
+    //        for (int j = 0; j < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); j++)
+    //        {
+    //            if (aStarItemObstacles[i, j] == 0)
+    //            {
+    //                Vector3 worldCellPos = grid.CellToWorld(new Vector3Int(i + room.templateLowerBounds.x, j + room.templateLowerBounds.y, 0));
+
+    //                Gizmos.DrawWireCube(new Vector3(worldCellPos.x + 0.5f, worldCellPos.y + 0.5f, 0), Vector3.one);
+    //            }
+    //        }
+    //    }
+
+    //}
+
+
+    #region Validation
+
+#if UNITY_EDITOR
+
+    private void OnValidate()
+    {
+        HelperUtilities.ValidateCheckNullValue(this, nameof(environmentGameObject), environmentGameObject);
+    }
+
+#endif
+
+    #endregion Validation
 }

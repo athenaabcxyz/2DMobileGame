@@ -21,8 +21,10 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate;
-    private bool isPlayerRolling = false;
     private float playerRollCooldownTimer = 0f;
+    private bool isPlayerMovementDisabled = false;
+
+    [HideInInspector] public bool isPlayerRolling = false;
 
     private void Awake()
     {
@@ -74,6 +76,10 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        // if player movement disabled then return
+        if (isPlayerMovementDisabled)
+            return;
+
         // if player is rolling then return
         if (isPlayerRolling) return;
 
@@ -82,6 +88,9 @@ public class PlayerControl : MonoBehaviour
 
         // Process the player weapon input
         WeaponInput();
+
+        // Process player use item input
+        UseItemInput();
 
         // Player roll cooldown timer
         PlayerRollCooldownTimer();
@@ -361,6 +370,31 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Use the nearest item within 2 unity units from the player
+    /// </summary>
+    private void UseItemInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float useItemRadius = 2f;
+
+            // Get any 'Useable' item near the player
+            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(player.GetPlayerPosition(), useItemRadius);
+
+            // Loop through detected items to see if any are 'useable'
+            foreach (Collider2D collider2D in collider2DArray)
+            {
+                IUseable iUseable = collider2D.GetComponent<IUseable>();
+
+                if (iUseable != null)
+                {
+                    iUseable.UseItem();
+                }
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // if collided with something stop player roll coroutine
@@ -381,6 +415,23 @@ public class PlayerControl : MonoBehaviour
 
             isPlayerRolling = false;
         }
+    }
+
+    /// <summary>
+    /// Enable the player movement
+    /// </summary>
+    public void EnablePlayer()
+    {
+        isPlayerMovementDisabled = false;
+    }
+
+    /// <summary>
+    /// Disable the player movement
+    /// </summary>
+    public void DisablePlayer()
+    {
+        isPlayerMovementDisabled = true;
+        player.idleEvent.CallIdleEvent();
     }
 
     /// <summary>
