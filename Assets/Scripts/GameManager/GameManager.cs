@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     #endregion Tooltip
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private InputActionReference pauseAction;
 
     #region Tooltip
     [Tooltip("Populate with the MessageText textmeshpro component in the FadeScreenUI")]
@@ -191,6 +193,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     // Start is called before the first frame update
     private void Start()
     {
+        Application.targetFrameRate = 60;
         previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
 
@@ -240,7 +243,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
             // While playing the level handle the tab key for the dungeon overview map.
             case GameState.playingLevel:
 
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (pauseAction.action.WasPressedThisFrame())
                 {
                     PauseGameMenu();
                 }
@@ -510,7 +513,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         {
             float timer = displaySeconds;
 
-            while (timer > 0f && !Input.GetKeyDown(KeyCode.Return))
+            while (timer > 0f && !Input.GetMouseButtonDown(0))
             {
                 timer -= Time.deltaTime;
                 yield return null;
@@ -519,7 +522,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         else
         // else display the message until the return button is pressed
         {
-            while (!Input.GetKeyDown(KeyCode.Return))
+            while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
             }

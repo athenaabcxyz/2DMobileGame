@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Cloud.Location</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Cloud.Location.LocationsReflection">
+            <summary>Holder for reflection information generated from google/cloud/location/locations.proto</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsReflection.Descriptor">
+            <summary>File descriptor for google/cloud/location/locations.proto</summary>
+        </member>
+        <member name="T:Google.Cloud.Location.ListLocationsRequest">
+            <summary>
+            The request message for [Locations.ListLocations][google.cloud.location.Locations.ListLocations].
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsRequest.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsRequest.Name">
+            <summary>
+            The resource that owns the locations collection, if applicable.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsRequest.FilterFieldNumber">
+            <summary>Field number for the "filter" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsRequest.Filter">
+            <summary>
+            The standard list filter.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsRequest.PageSizeFieldNumber">
+            <summary>Field number for the "page_size" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsRequest.PageSize">
+            <summary>
+            The standard list page size.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsRequest.PageTokenFieldNumber">
+            <summary>Field number for the "page_token" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsRequest.PageToken">
+            <summary>
+            The standard list page token.
+            </summary>
+        </member>
+        <member name="T:Google.Cloud.Location.ListLocationsResponse">
+            <summary>
+            The response message for [Locations.ListLocations][google.cloud.location.Locations.ListLocations].
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsResponse.LocationsFieldNumber">
+            <summary>Field number for the "locations" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsResponse.Locations">
+            <summary>
+            A list of locations that matches the specified filter in the request.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.ListLocationsResponse.NextPageTokenFieldNumber">
+            <summary>Field number for the "next_page_token" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.ListLocationsResponse.NextPageToken">
+            <summary>
+            The standard List next-page token.
+            </summary>
+        </member>
+        <member name="M:Google.Cloud.Location.ListLocationsResponse.GetEnumerator">
+            <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        </member>
+        <member name="T:Google.Cloud.Location.GetLocationRequest">
+            <summary>
+            The request message for [Locations.GetLocation][google.cloud.location.Locations.GetLocation].
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.GetLocationRequest.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.GetLocationRequest.Name">
+            <summary>
+            Resource name for the location.
+            </summary>
+        </member>
+        <member name="T:Google.Cloud.Location.Location">
+            <summary>
+            A resource that represents Google Cloud Platform location.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.Location.NameFieldNumber">
+            <summary>Field number for the "name" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Location.Name">
+            <summary>
+            Resource name for the location, which may vary between implementations.
+            For example: `"projects/example-project/locations/us-east1"`
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.Location.LocationIdFieldNumber">
+            <summary>Field number for the "location_id" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Location.LocationId">
+            <summary>
+            The canonical id for this location. For example: `"us-east1"`.
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.Location.DisplayNameFieldNumber">
+            <summary>Field number for the "display_name" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Location.DisplayName">
+            <summary>
+            The friendly name for this location, typically a nearby city name.
+            For example, "Tokyo".
+            </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.Location.LabelsFieldNumber">
+            <summary>Field number for the "labels" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Location.Labels">
+             <summary>
+             Cross-service attributes for the location. For example
+            
+                 {"cloud.googleapis.com/region": "us-east1"}
+             </summary>
+        </member>
+        <member name="F:Google.Cloud.Location.Location.MetadataFieldNumber">
+            <summary>Field number for the "metadata" field.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Location.Metadata">
+            <summary>
+            Service-specific metadata. For example the available capacity at the given
+            location.
+            </summary>
+        </member>
+        <member name="T:Google.Cloud.Location.LocationsSettings">
+            <summary>Settings for <see cref="T:Google.Cloud.Location.LocationsClient"/> instances.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsSettings.GetDefault">
+            <summary>Get a new instance of the default <see cref="T:Google.Cloud.Location.LocationsSettings"/>.</summary>
+            <returns>A new instance of the default <see cref="T:Google.Cloud.Location.LocationsSettings"/>.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsSettings.#ctor">
+            <summary>Constructs a new <see cref="T:Google.Cloud.Location.LocationsSettings"/> object with default settings.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsSettings.ListLocationsSettings">
+            <summary>
+            <see cref="T:Google.Api.Gax.Grpc.CallSettings"/> for synchronous and asynchronous calls to
+            <c>LocationsClient.ListLocations</c> and <c>LocationsClient.ListLocationsAsync</c>.
+            </summary>
+            <remarks>
+            <list type="bullet">
+            <item><description>This call will not be retried.</description></item>
+            <item><description>No timeout is applied.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsSettings.GetLocationSettings">
+            <summary>
+            <see cref="T:Google.Api.Gax.Grpc.CallSettings"/> for synchronous and asynchronous calls to <c>LocationsClient.GetLocation</c>
+             and <c>LocationsClient.GetLocationAsync</c>.
+            </summary>
+            <remarks>
+            <list type="bullet">
+            <item><description>This call will not be retried.</description></item>
+            <item><description>No timeout is applied.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsSettings.Clone">
+            <summary>Creates a deep clone of this object, with all the same property values.</summary>
+            <returns>A deep clone of this <see cref="T:Google.Cloud.Location.LocationsSettings"/> object.</returns>
+        </member>
+        <member name="T:Google.Cloud.Location.LocationsClientBuilder">
+            <summary>
+            Builder class for <see cref="T:Google.Cloud.Location.LocationsClient"/> to provide simple configuration of credentials, endpoint etc.
+            </summary>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClientBuilder.Settings">
+            <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientBuilder.#ctor">
+            <summary>Creates a new builder with default settings.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientBuilder.Build">
+            <summary>Builds the resulting client.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientBuilder.BuildAsync(System.Threading.CancellationToken)">
+            <summary>Builds the resulting client asynchronously.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientBuilder.GetChannelPool">
+            <summary>Returns the channel pool to use when no other options are specified.</summary>
+        </member>
+        <member name="T:Google.Cloud.Location.LocationsClient">
+            <summary>Locations client wrapper, for convenient use.</summary>
+            <remarks>
+            An abstract interface that provides location-related information for
+            a service. Service-specific metadata is provided through the
+            [Location.metadata][google.cloud.location.Location.metadata] field.
+            </remarks>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClient.DefaultEndpoint">
+            <summary>
+            The default endpoint for the Locations service, which is a host of "cloud.googleapis.com" and a port of 443.
+            </summary>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClient.DefaultScopes">
+            <summary>The default Locations scopes.</summary>
+            <remarks>
+            The default Locations scopes are:
+            <list type="bullet">
+            <item><description>https://www.googleapis.com/auth/cloud-platform</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClient.ServiceMetadata">
+            <summary>The service metadata associated with this client type.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.CreateAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously creates a <see cref="T:Google.Cloud.Location.LocationsClient"/> using the default credentials, endpoint and settings.
+            To specify custom credentials or other settings, use <see cref="T:Google.Cloud.Location.LocationsClientBuilder"/>.
+            </summary>
+            <param name="cancellationToken">
+            The <see cref="T:System.Threading.CancellationToken"/> to use while creating the client.
+            </param>
+            <returns>The task representing the created <see cref="T:Google.Cloud.Location.LocationsClient"/>.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.Create">
+            <summary>
+            Synchronously creates a <see cref="T:Google.Cloud.Location.LocationsClient"/> using the default credentials, endpoint and settings. 
+            To specify custom credentials or other settings, use <see cref="T:Google.Cloud.Location.LocationsClientBuilder"/>.
+            </summary>
+            <returns>The created <see cref="T:Google.Cloud.Location.LocationsClient"/>.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.Create(Grpc.Core.CallInvoker,Google.Cloud.Location.LocationsSettings,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Creates a <see cref="T:Google.Cloud.Location.LocationsClient"/> which uses the specified call invoker for remote operations.
+            </summary>
+            <param name="callInvoker">
+            The <see cref="T:Grpc.Core.CallInvoker"/> for remote operations. Must not be null.
+            </param>
+            <param name="settings">Optional <see cref="T:Google.Cloud.Location.LocationsSettings"/>.</param>
+            <param name="logger">Optional <see cref="T:Microsoft.Extensions.Logging.ILogger"/>.</param>
+            <returns>The created <see cref="T:Google.Cloud.Location.LocationsClient"/>.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.ShutdownDefaultChannelsAsync">
+            <summary>
+            Shuts down any channels automatically created by <see cref="M:Google.Cloud.Location.LocationsClient.Create"/> and
+            <see cref="M:Google.Cloud.Location.LocationsClient.CreateAsync(System.Threading.CancellationToken)"/>. Channels which weren't automatically created are not
+            affected.
+            </summary>
+            <remarks>
+            After calling this method, further calls to <see cref="M:Google.Cloud.Location.LocationsClient.Create"/> and
+            <see cref="M:Google.Cloud.Location.LocationsClient.CreateAsync(System.Threading.CancellationToken)"/> will create new channels, which could in turn be shut down
+            by another call to this method.
+            </remarks>
+            <returns>A task representing the asynchronous shutdown operation.</returns>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClient.GrpcClient">
+            <summary>The underlying gRPC Locations client</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.ListLocations(Google.Cloud.Location.ListLocationsRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A pageable sequence of <see cref="T:Google.Cloud.Location.Location"/> resources.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.ListLocationsAsync(Google.Cloud.Location.ListLocationsRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A pageable asynchronous sequence of <see cref="T:Google.Cloud.Location.Location"/> resources.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.GetLocation(Google.Cloud.Location.GetLocationRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>The RPC response.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.GetLocationAsync(Google.Cloud.Location.GetLocationRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A Task containing the RPC response.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClient.GetLocationAsync(Google.Cloud.Location.GetLocationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to use for this RPC.</param>
+            <returns>A Task containing the RPC response.</returns>
+        </member>
+        <member name="T:Google.Cloud.Location.LocationsClientImpl">
+            <summary>Locations client wrapper implementation, for convenient use.</summary>
+            <remarks>
+            An abstract interface that provides location-related information for
+            a service. Service-specific metadata is provided through the
+            [Location.metadata][google.cloud.location.Location.metadata] field.
+            </remarks>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientImpl.#ctor(Google.Cloud.Location.Locations.LocationsClient,Google.Cloud.Location.LocationsSettings,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Constructs a client wrapper for the Locations service, with the specified gRPC client and settings.
+            </summary>
+            <param name="grpcClient">The underlying gRPC client.</param>
+            <param name="settings">The base <see cref="T:Google.Cloud.Location.LocationsSettings"/> used within this client.</param>
+            <param name="logger">Optional <see cref="T:Microsoft.Extensions.Logging.ILogger"/> to use within this client.</param>
+        </member>
+        <member name="P:Google.Cloud.Location.LocationsClientImpl.GrpcClient">
+            <summary>The underlying gRPC Locations client</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientImpl.ListLocations(Google.Cloud.Location.ListLocationsRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A pageable sequence of <see cref="T:Google.Cloud.Location.Location"/> resources.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientImpl.ListLocationsAsync(Google.Cloud.Location.ListLocationsRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A pageable asynchronous sequence of <see cref="T:Google.Cloud.Location.Location"/> resources.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientImpl.GetLocation(Google.Cloud.Location.GetLocationRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>The RPC response.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.LocationsClientImpl.GetLocationAsync(Google.Cloud.Location.GetLocationRequest,Google.Api.Gax.Grpc.CallSettings)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request object containing all of the parameters for the API call.</param>
+            <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+            <returns>A Task containing the RPC response.</returns>
+        </member>
+        <member name="T:Google.Cloud.Location.Locations">
+            <summary>
+            An abstract interface that provides location-related information for
+            a service. Service-specific metadata is provided through the
+            [Location.metadata][google.cloud.location.Location.metadata] field.
+            </summary>
+        </member>
+        <member name="P:Google.Cloud.Location.Locations.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:Google.Cloud.Location.Locations.LocationsBase">
+            <summary>Base class for server-side implementations of Locations</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsBase.ListLocations(Google.Cloud.Location.ListLocationsRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsBase.GetLocation(Google.Cloud.Location.GetLocationRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request received from the client.</param>
+            <param name="context">The context of the server-side call handler being invoked.</param>
+            <returns>The response to send back to the client (wrapped by a task).</returns>
+        </member>
+        <member name="T:Google.Cloud.Location.Locations.LocationsClient">
+            <summary>Client for Locations</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Locations</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Locations that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.ListLocations(Google.Cloud.Location.ListLocationsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.ListLocations(Google.Cloud.Location.ListLocationsRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.ListLocationsAsync(Google.Cloud.Location.ListLocationsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.ListLocationsAsync(Google.Cloud.Location.ListLocationsRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Lists information about the supported locations for this service.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.GetLocation(Google.Cloud.Location.GetLocationRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.GetLocation(Google.Cloud.Location.GetLocationRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.GetLocationAsync(Google.Cloud.Location.GetLocationRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.GetLocationAsync(Google.Cloud.Location.GetLocationRequest,Grpc.Core.CallOptions)">
+            <summary>
+            Gets information about a location.
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.LocationsClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.BindService(Google.Cloud.Location.Locations.LocationsBase)">
+            <summary>Creates service definition that can be registered with a server</summary>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+        <member name="M:Google.Cloud.Location.Locations.BindService(Grpc.Core.ServiceBinderBase,Google.Cloud.Location.Locations.LocationsBase)">
+            <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+            Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+            <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+            <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+        </member>
+        <member name="T:Google.Cloud.Location.PackageApiMetadata">
+            <summary>Static class to provide common access to package-wide API metadata.</summary>
+        </member>
+        <member name="P:Google.Cloud.Location.PackageApiMetadata.ApiMetadata">
+            <summary>The <see cref="T:Google.Api.Gax.Grpc.ApiMetadata"/> for services in this package.</summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
+            <summary>Static class to provide extension methods to configure API clients.</summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddLocationsClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Google.Cloud.Location.LocationsClientBuilder})">
+            <summary>Adds a singleton <see cref="T:Google.Cloud.Location.LocationsClient"/> to <paramref name="services"/>.</summary>
+            <param name="services">
+            The service collection to add the client to. The services are used to configure the client when requested.
+            </param>
+            <param name="action">
+            An optional action to invoke on the client builder. This is invoked before services from
+            <paramref name="services"/> are used.
+            </param>
+        </member>
+    </members>
+</doc>

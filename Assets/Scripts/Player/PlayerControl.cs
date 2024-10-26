@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Player))]
 [DisallowMultipleComponent]
@@ -14,6 +16,13 @@ public class PlayerControl : MonoBehaviour
     #endregion Tooltip
 
     [SerializeField] private MovementDetailsSO movementDetails;
+    [SerializeField] private InputActionReference actionMap;
+    [SerializeField] private InputActionReference aimMap;
+    [SerializeField] private InputActionReference rollAction;
+    [SerializeField] private InputActionReference reloadAction;
+    [SerializeField] private InputActionReference nextWeapon;
+    [SerializeField] private InputActionReference previousWeapon;
+    [SerializeField] private InputActionReference useItemAction;
 
     private Player player;
     private bool leftMouseDownPreviousFrame = false;
@@ -102,9 +111,10 @@ public class PlayerControl : MonoBehaviour
     private void MovementInput()
     {
         // Get movement input
-        float horizontalMovement = Input.GetAxisRaw("Horizontal");
-        float verticalMovement = Input.GetAxisRaw("Vertical");
-        bool rightMouseButtonDown = Input.GetMouseButtonDown(1);
+        Vector2 movement = actionMap.action.ReadValue<Vector2>();
+        float horizontalMovement = movement.x;
+        float verticalMovement = movement.y;
+        bool rightMouseButtonDown = rollAction.action.WasPressedThisFrame();
 
         // Create a direction vector based on the input
         Vector2 direction = new Vector2(horizontalMovement, verticalMovement);
@@ -207,14 +217,12 @@ public class PlayerControl : MonoBehaviour
 
     private void AimWeaponInput(out Vector3 weaponDirection, out float weaponAngleDegrees, out float playerAngleDegrees, out AimDirection playerAimDirection)
     {
-        // Get mouse world position
-        Vector3 mouseWorldPosition = HelperUtilities.GetMouseWorldPosition();
-
+        Vector2 direction = aimMap.action.ReadValue<Vector2>();
         // Calculate direction vector of mouse cursor from weapon shoot position
-        weaponDirection = (mouseWorldPosition - player.activeWeapon.GetShootPosition());
+        weaponDirection = new Vector3(direction.x, direction.y, 0) + (player.activeWeapon.GetShootPosition() - transform.position);
 
         // Calculate direction vector of mouse cursor from player transform position
-        Vector3 playerDirection = (mouseWorldPosition - transform.position);
+        Vector3 playerDirection = direction;
 
         // Get weapon to cursor angle
         weaponAngleDegrees = HelperUtilities.GetAngleFromVector(weaponDirection);
@@ -232,7 +240,7 @@ public class PlayerControl : MonoBehaviour
     private void FireWeaponInput(Vector3 weaponDirection, float weaponAngleDegrees, float playerAngleDegrees, AimDirection playerAimDirection)
     {
         // Fire when left mouse button is clicked
-        if (Input.GetMouseButton(0))
+        if (aimMap.action.IsPressed())
         {
             // Trigger fire weapon event
             player.fireWeaponEvent.CallFireWeaponEvent(true, leftMouseDownPreviousFrame, playerAimDirection, playerAngleDegrees, weaponAngleDegrees, weaponDirection);
@@ -247,12 +255,12 @@ public class PlayerControl : MonoBehaviour
     private void SwitchWeaponInput()
     {
         // Switch weapon if mouse scroll wheel selecetd
-        if (Input.mouseScrollDelta.y < 0f)
+        if (previousWeapon.action.WasPressedThisFrame())
         {
             PreviousWeapon();
         }
 
-        if (Input.mouseScrollDelta.y > 0f)
+        if (nextWeapon.action.WasPressedThisFrame())
         {
             NextWeapon();
         }
@@ -362,7 +370,7 @@ public class PlayerControl : MonoBehaviour
         // if ammo in clip equals clip capacity then return
         if (currentWeapon.weaponClipRemainingAmmo == currentWeapon.weaponDetails.weaponClipAmmoCapacity) return;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (reloadAction.action.WasPressedThisFrame())
         {
             // Call the reload weapon event
             player.reloadWeaponEvent.CallReloadWeaponEvent(player.activeWeapon.GetCurrentWeapon(), 0);
@@ -375,7 +383,7 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     private void UseItemInput()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (useItemAction.action.WasPressedThisFrame())
         {
             float useItemRadius = 2f;
 
