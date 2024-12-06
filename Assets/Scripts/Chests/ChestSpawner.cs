@@ -79,6 +79,8 @@ public class ChestSpawner : MonoBehaviour
 
         // Subscribe to room enemies defeated event
         StaticEventHandler.OnRoomEnemiesDefeated += StaticEventHandler_OnRoomEnemiesDefeated;
+
+        StaticEventHandler.OnChallengeEnd += ChallengeSuccessReward;
     }
 
     private void OnDisable()
@@ -90,6 +92,13 @@ public class ChestSpawner : MonoBehaviour
         StaticEventHandler.OnRoomEnemiesDefeated -= StaticEventHandler_OnRoomEnemiesDefeated;
     }
 
+    private void ChallengeSuccessReward(bool success)
+    {
+        if (success)
+        {
+            SpawnChest();
+        }
+    }
     /// <summary>
     /// Handle room changed event
     /// </summary>

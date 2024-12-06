@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public static class StaticEventHandler 
+public static class StaticEventHandler
 {
     // Room changed event
     public static event Action<RoomChangedEventArgs> OnRoomChanged;
@@ -45,8 +45,47 @@ public static class StaticEventHandler
     {
         OnMultiplier?.Invoke(new MultiplierArgs() { multiplier = multiplier });
     }
+
+    public static event Action<int> OnDestroyItemForChallenge;
+
+    public static void CallDestroyItemForChallengeEvent()
+    {
+        OnDestroyItemForChallenge?.Invoke(1);
+    }
+
+    public static event Action OnPlayerHit;
+    public static void CallPlayerHitEvent()
+    {
+        OnPlayerHit?.Invoke();
+    }
+
+    public static event Action<bool> OnChallengeEnd;
+
+    public static void CallChallengeEnd(bool success)
+    {
+        OnChallengeEnd?.Invoke(success);
+    }
+
+    public static event Action<ChallengeInfoEventArgs> UpdateChallengeInfo;
+
+    public static void CallUpdateChallengeInfo(ChallengeInfoEventArgs args)
+    {
+        UpdateChallengeInfo?.Invoke(args);
+    }
+
+    public static event Action OnChallengeStart;
+
+    public static void CallChallengeStart()
+    {
+        OnChallengeStart?.Invoke();
+    }
 }
 
+public class ChallengeInfoEventArgs: EventArgs
+{
+    public float remainDuration;
+    public int hitCount;
+}
 public class RoomChangedEventArgs : EventArgs
 {
     public Room room;

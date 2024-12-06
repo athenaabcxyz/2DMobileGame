@@ -15,6 +15,15 @@ public class RoomNodeGraphEditor : EditorWindow
     private RoomNodeSO currentRoomNode = null;
     private RoomNodeTypeListSO roomNodeTypeList;
 
+    private Dictionary<string, int> sampleTestDictorany = new Dictionary<string, int>()
+    {
+        {"Boss Room", 1 },
+        {"Small Room", 2 },
+        {"Medium Room", 2 },
+        {"Chest Room", 1 },
+        {"Entrance", 1 }
+    };
+
     // Node layout values
     private const float nodeWidth = 160f;
 
@@ -110,6 +119,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
             // Draw Room Nodes
             DrawRoomNodes();
+
         }
 
         if (GUI.changed)
@@ -249,6 +259,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
         menu.AddItem(new GUIContent("Create Room Node"), false, CreateRoomNode, mousePosition);
         menu.AddSeparator("");
+        menu.AddSeparator("");
         menu.AddItem(new GUIContent("Select All Room Nodes"), false, SelectAllRoomNodes);
         menu.AddSeparator("");
         menu.AddItem(new GUIContent("Delete Selected Room Node Links"), false, DeleteSelectedRoomNodeLinks);
@@ -274,7 +285,7 @@ public class RoomNodeGraphEditor : EditorWindow
     /// <summary>
     /// Create a room node at the mouse position - overloaded to also pass in RoomNodeType
     /// </summary>
-    private void CreateRoomNode(object mousePositionObject, RoomNodeTypeSO roomNodeType)
+    private RoomNodeSO CreateRoomNode(object mousePositionObject, RoomNodeTypeSO roomNodeType)
     {
         Vector2 mousePosition = (Vector2)mousePositionObject;
 
@@ -294,6 +305,7 @@ public class RoomNodeGraphEditor : EditorWindow
 
         // Refresh graph node dictionary
         currentRoomNodeGraph.OnValidate();
+        return roomNode;
     }
 
     /// <summary>
@@ -598,4 +610,179 @@ public class RoomNodeGraphEditor : EditorWindow
             GUI.changed = true;
         }
     }
+
+    //Auto generate map
+    //public void GenerateRoomLayout(Dictionary<string, int> roomCounts)
+    //{
+    //    Vector2 roomPosition = new Vector2(200f, 200f);  // Start position for the first room
+    //    List<RoomNodeSO> createdRooms = new List<RoomNodeSO>();
+
+    //    // Loop through each room type in the dictionary
+    //    foreach (var roomType in roomCounts)
+    //    {
+    //        for (int i = 0; i < roomType.Value; i++)
+    //        {
+    //            // Create the room nodes
+    //            RoomNodeTypeSO roomNodeType = roomNodeTypeList.list.Find(x => x.roomNodeTypeName == roomType.Key);
+    //            if (roomNodeType != null)
+    //            {
+    //                // Create a room node at the specified position
+    //                RoomNodeSO newRoomNode = CreateRoomNode(roomPosition, roomNodeType);
+    //                createdRooms.Add(newRoomNode);
+    //            }
+
+    //            // Update the position for the next room
+    //            roomPosition += new Vector2(nodeWidth + 100f, 0f); // simple horizontal spacing, adjust as needed
+    //        }
+    //    }
+
+    //    // Connect the rooms with corridors
+    //    ConnectRoomsWithCorridors(createdRooms);
+    //}
+
+    //private void ConnectRoomsWithCorridors(List<RoomNodeSO> rooms)
+    //{
+    //    // Iterate through the created rooms and connect them
+    //    for (int i = 0; i < rooms.Count - 1; i++)
+    //    {
+    //        RoomNodeSO roomA = rooms[i];
+    //        RoomNodeSO roomB = rooms[i + 1];
+
+    //        // Connect roomA and roomB with a corridor
+    //        CreateCorridorBetweenRooms(roomA, roomB);
+    //    }
+    //}
+
+    //private void CreateCorridorBetweenRooms(RoomNodeSO roomA, RoomNodeSO roomB)
+    //{
+    //    // Create a corridor (simple straight line connection)
+    //    Vector2 start = roomA.rect.center;
+    //    Vector2 end = roomB.rect.center;
+
+    //    // Create the corridor node (could be a special type of node or just a connection)
+    //    RoomNodeSO corridorNode = ScriptableObject.CreateInstance<RoomNodeSO>();
+    //    corridorNode.Initialise(new Rect((start + end) / 2, new Vector2(100f, 30f)), currentRoomNodeGraph, roomNodeTypeList.list.Find(x => x.isCorridor));
+    //    // Add the corridor to the room graph
+    //    currentRoomNodeGraph.roomNodeList.Add(corridorNode);
+
+    //    // Connect the two rooms
+    //    roomA.AddChildRoomNodeIDToRoomNode(corridorNode.id);
+    //    roomB.AddParentRoomNodeIDToRoomNode(corridorNode.id);
+    //}
+
+    public void GenerateRoomLayout(Dictionary<string, int> roomCounts)
+    {
+        Vector2 startRoomPosition = new Vector2(200f, 200f); // Start position for the entrance room
+        HashSet<Vector2> occupiedPositions = new HashSet<Vector2>();
+        List<RoomNodeSO> createdRooms = new List<RoomNodeSO>();
+
+        // Create the Entrance Room
+        RoomNodeTypeSO entranceRoomType = roomNodeTypeList.list.Find(x => x.roomNodeTypeName == "Entrance");
+        RoomNodeSO entranceRoom = CreateRoomNode(startRoomPosition, entranceRoomType);
+        createdRooms.Add(entranceRoom);
+        occupiedPositions.Add(startRoomPosition);
+
+        // Loop through room types and create rooms
+        foreach (var roomType in roomCounts)
+        {
+            for (int i = 0; i < roomType.Value; i++)
+            {
+                RoomNodeTypeSO roomNodeType = roomNodeTypeList.list.Find(x => x.roomNodeTypeName == roomType.Key);
+                if (roomNodeType != null)
+                {
+                    // Find a valid position for the new room
+                    Vector2 roomPosition = FindValidRoomPosition(occupiedPositions, createdRooms, roomNodeType);
+                    if (roomPosition == Vector2.zero)
+                        continue; // No valid position found, skip this room
+
+                    // Create and place the room
+                    RoomNodeSO newRoomNode = CreateRoomNode(roomPosition, roomNodeType);
+                    createdRooms.Add(newRoomNode);
+                    occupiedPositions.Add(roomPosition);
+                }
+            }
+        }
+
+        // Connect rooms based on their entrance capacities
+        ConnectRoomsWithCorridors(createdRooms);
+    }
+
+    private Vector2 FindValidRoomPosition(HashSet<Vector2> occupiedPositions, List<RoomNodeSO> existingRooms, RoomNodeTypeSO roomNodeType)
+    {
+        // Possible offsets for adjacent room placement
+        Vector2[] directions = new Vector2[]
+        {
+        new Vector2(0f, 1f),  // Up
+        new Vector2(1f, 0f),  // Right
+        new Vector2(0f, -1f), // Down
+        new Vector2(-1f, 0f)  // Left
+        };
+
+        foreach (RoomNodeSO existingRoom in existingRooms)
+        {
+            foreach (Vector2 direction in directions)
+            {
+                Vector2 candidatePosition = existingRoom.rect.position + direction * (nodeWidth + 100f);
+
+                // Check if the position is already occupied
+                if (!occupiedPositions.Contains(candidatePosition))
+                {
+                    // Ensure room entrance constraints are met
+                    if (roomNodeType.isNone || existingRoom.GetChildRoomNodeCount() <=4)
+                    {
+                        return candidatePosition;
+                    }
+                }
+            }
+        }
+
+        return Vector2.zero; // No valid position found
+    }
+
+    private void ConnectRoomsWithCorridors(List<RoomNodeSO> rooms)
+    {
+        foreach (RoomNodeSO room in rooms)
+        {
+            List<RoomNodeSO> availableNeighbors = FindAvailableNeighbors(room, rooms);
+
+            foreach (RoomNodeSO neighbor in availableNeighbors)
+            {
+                // Connect the room and the neighbor
+                CreateCorridorBetweenRooms(room, neighbor);
+            }
+        }
+    }
+
+    private List<RoomNodeSO> FindAvailableNeighbors(RoomNodeSO room, List<RoomNodeSO> allRooms)
+    {
+        List<RoomNodeSO> neighbors = new List<RoomNodeSO>();
+
+        foreach (RoomNodeSO potentialNeighbor in allRooms)
+        {
+            if (room != potentialNeighbor && !room.IsConnectedTo(potentialNeighbor) &&
+                Vector2.Distance(room.rect.center, potentialNeighbor.rect.center) <= (nodeWidth + 150f))
+            {
+                neighbors.Add(potentialNeighbor);
+            }
+        }
+
+        return neighbors;
+    }
+
+    private void CreateCorridorBetweenRooms(RoomNodeSO roomA, RoomNodeSO roomB)
+    {
+        // Create a corridor node at the midpoint of the two rooms
+        Vector2 start = roomA.rect.center;
+        Vector2 end = roomB.rect.center;
+        Vector2 midpoint = (start + end) / 2;
+
+        RoomNodeSO corridorNode = ScriptableObject.CreateInstance<RoomNodeSO>();
+        corridorNode.Initialise(new Rect(midpoint, new Vector2(100f, 30f)), currentRoomNodeGraph, roomNodeTypeList.list.Find(x => x.isCorridor));
+        currentRoomNodeGraph.roomNodeList.Add(corridorNode);
+
+        // Connect the rooms to the corridor
+        roomA.AddChildRoomNodeIDToRoomNode(corridorNode.id);
+        roomB.AddParentRoomNodeIDToRoomNode(corridorNode.id);
+    }
+
 }

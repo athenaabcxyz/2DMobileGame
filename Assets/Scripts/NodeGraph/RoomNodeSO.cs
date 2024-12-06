@@ -39,6 +39,26 @@ public class RoomNodeSO : ScriptableObject
     /// <summary>
     /// Draw node with the nodestyle
     /// </summary>
+    /// 
+
+    public bool IsConnectedTo(RoomNodeSO roomNodeSO)
+    {
+        foreach (string parent in parentRoomNodeIDList)
+        {
+            if (parent == roomNodeSO.id)
+            { return true; }
+        }
+        foreach (string child in childRoomNodeIDList)
+        {
+            if (child == roomNodeSO.id)
+            { return true; }
+        }
+        return false;
+    }
+    public int GetChildRoomNodeCount()
+    {
+        return childRoomNodeIDList.Count;
+    }
     public void Draw(GUIStyle nodeStyle)
     {
         //  Draw Node Box Using Begin Area

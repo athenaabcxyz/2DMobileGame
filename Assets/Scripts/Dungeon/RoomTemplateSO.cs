@@ -54,6 +54,7 @@ public class RoomTemplateSO : ScriptableObject
 
     #endregion Header ROOM CONFIGURATION
 
+
     #region Tooltip
 
     [Tooltip("The room node type SO. The room node types correspond to the room nodes used in the room node graph.  The exceptions being with corridors.  In the room node graph there is just one corridor type 'Corridor'.  For the room templates there are 2 corridor node types - CorridorNS and CorridorEW.")]
@@ -61,6 +62,14 @@ public class RoomTemplateSO : ScriptableObject
     #endregion Tooltip
 
     public RoomNodeTypeSO roomNodeType;
+
+    #region Tooltip
+
+    [Tooltip("Is this room overided to be a challenge room")]
+
+    #endregion Tooltip
+
+    public bool isChallengeRoom;
 
     #region Tooltip
 

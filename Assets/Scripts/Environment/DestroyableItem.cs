@@ -51,6 +51,7 @@ public class DestroyableItem : MonoBehaviour
         if (healthEventArgs.healthAmount <= 0f)
         {
             StartCoroutine(PlayAnimation());
+            StaticEventHandler.CallDestroyItemForChallengeEvent();
         }
     }
 

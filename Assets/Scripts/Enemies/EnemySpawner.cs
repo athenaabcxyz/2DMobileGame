@@ -1,5 +1,9 @@
+using System;
 using System.Collections;
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using static ChallengeManager;
 
 [DisallowMultipleComponent]
 public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
@@ -8,24 +12,36 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
     private int currentEnemyCount;
     private int enemiesSpawnedSoFar;
     private int enemyMaxConcurrentSpawnNumber;
-    private Room currentRoom;
+    public Room currentRoom;
+    public ChallengeManager challengeManager;
     private RoomEnemySpawnParameters roomEnemySpawnParameters;
+    public GameObject challengeUI;
 
     private void OnEnable()
     {
         // subscribe to room changed event
         StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
+        StaticEventHandler.OnChallengeStart += OnChallengeStart;
+        StaticEventHandler.OnChallengeEnd += OnChallengeEnd;
     }
 
     private void OnDisable()
     {
         // unsubscribe from room changed event
         StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;
+        StaticEventHandler.OnChallengeEnd -= OnChallengeEnd;
+        StaticEventHandler.OnChallengeStart -= OnChallengeStart;
     }
 
     /// <summary>
     /// Process a change in room
     /// </summary>
+    /// 
+
+    public Room GetRoom
+    {
+        get; private set;
+    }
     private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
     {
         enemiesSpawnedSoFar = 0;
@@ -67,10 +83,73 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
         // Lock doors
         currentRoom.instantiatedRoom.LockDoors();
 
+
+
+        if (UnityEngine.Random.value >= 0f && !currentRoom.roomNodeType.isCorridorEW && !currentRoom.roomNodeType.isCorridorNS && !currentRoom.roomNodeType.isEntrance && !currentRoom.roomNodeType.isBossRoom) // 30% chance for a challenge
+        {
+            var challengeType = (ChallengeManager.ChallengeType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(ChallengeManager.ChallengeType)).Length);
+            Debug.Log(challengeType);
+            ChallengeManager.Challenge challenge;
+            switch (challengeType)
+            {
+                case ChallengeManager.ChallengeType.AvoidGettingHit:
+                    challenge = new ChallengeManager.Challenge(
+                        challengeType,
+                        duration: 0f,
+                        maxHits: 5, // Adjust as needed for specific challenge types
+                        onSuccess: OnChallengeSuccess
+                    );
+                    challengeManager.StartChallenge(challenge);
+                    break;
+                case ChallengeManager.ChallengeType.SurviveForDuration:
+                    challenge = new ChallengeManager.Challenge(
+                        challengeType,
+                        duration: 30,
+                        maxHits: 0, // Adjust as needed for specific challenge types
+                        onSuccess: OnChallengeSuccess
+                    );
+                    challengeManager.StartChallenge(challenge);
+                    break;
+                case ChallengeManager.ChallengeType.DefeatEnemiesInTime:
+                    challenge = new ChallengeManager.Challenge(
+                        challengeType,
+                        duration: 60f,
+                        maxHits: 1000, // Adjust as needed for specific challenge types
+                        onSuccess: OnChallengeSuccess
+                    );
+                     challengeManager.StartChallenge(challenge);
+                    break;
+            }
+        }
+        Debug.Log(currentRoom.roomNodeType.isNone);
         // Spawn enemies
         SpawnEnemies();
     }
+    private void OnChallengeStart()
+    {
+        challengeUI.SetActive(true);
+    }
 
+    public void OnChallengeEnd(bool success)
+    {
+        StartCoroutine(ChallengeUIDisable());
+    }
+    private IEnumerator ChallengeUIDisable()
+    {
+        float timer = 2f;
+        while (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        challengeUI.SetActive(false);
+
+    }
+    private void OnChallengeSuccess()
+    {
+        StaticEventHandler.CallChallengeEnd(true);
+    }
     /// <summary>
     /// Spawn the enemies
     /// </summary>
@@ -115,7 +194,7 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
                     yield return null;
                 }
 
-                Vector3Int cellPosition = (Vector3Int)currentRoom.spawnPositionArray[Random.Range(0, currentRoom.spawnPositionArray.Length)];
+                Vector3Int cellPosition = (Vector3Int)currentRoom.spawnPositionArray[UnityEngine.Random.Range(0, currentRoom.spawnPositionArray.Length)];
 
                 // Create Enemy - Get next enemy type to spawn 
                 CreateEnemy(randomEnemyHelperClass.GetItem(), grid.CellToWorld(cellPosition));
@@ -130,7 +209,7 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
     /// </summary>
     private float GetEnemySpawnInterval()
     {
-        return (Random.Range(roomEnemySpawnParameters.minSpawnInterval, roomEnemySpawnParameters.maxSpawnInterval));
+        return (UnityEngine.Random.Range(roomEnemySpawnParameters.minSpawnInterval, roomEnemySpawnParameters.maxSpawnInterval));
     }
 
     /// <summary>
@@ -138,7 +217,7 @@ public class EnemySpawner : SingletonMonobehaviour<EnemySpawner>
     /// </summary>
     private int GetConcurrentEnemies()
     {
-        return (Random.Range(roomEnemySpawnParameters.minConcurrentEnemies, roomEnemySpawnParameters.maxConcurrentEnemies));
+        return (UnityEngine.Random.Range(roomEnemySpawnParameters.minConcurrentEnemies, roomEnemySpawnParameters.maxConcurrentEnemies));
     }
 
     /// <summary>
