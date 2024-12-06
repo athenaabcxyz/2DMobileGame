@@ -36,7 +36,6 @@ public class ChallengeManager : MonoBehaviour
     public bool isChallengeActive;
     private float challengeTimer;
     private int playerHits;
-    private int objectsDestroyed;
 
     private void OnEnable()
     {
@@ -61,7 +60,6 @@ public class ChallengeManager : MonoBehaviour
         currentChallenge = challenge;
         challengeTimer = challenge.Duration;
         playerHits = 0;
-        objectsDestroyed = 0;
         isChallengeActive = true;
 
         Debug.Log($"Challenge started: {challenge.Type}, Duration: {challenge.Duration}s");
