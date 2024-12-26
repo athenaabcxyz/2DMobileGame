@@ -110,10 +110,11 @@ public class ChallengeManager : MonoBehaviour
 
     public void RegisterPlayerHit()
     {
-        if (!isChallengeActive || currentChallenge.Type != ChallengeType.AvoidGettingHit||currentChallenge.Type!=ChallengeType.SurviveForDuration)
+        if (!isChallengeActive && (currentChallenge.Type != ChallengeType.AvoidGettingHit||currentChallenge.Type!=ChallengeType.SurviveForDuration))
             return;
 
         playerHits++;
+
         if (playerHits > currentChallenge.MaxHits)
         {
             EndChallenge(false); // Challenge failed due to excessive hits

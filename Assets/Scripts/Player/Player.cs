@@ -121,10 +121,6 @@ public class Player : MonoBehaviour
         {
             destroyedEvent.CallDestroyedEvent(true, 0);
         }
-        if (healthEventArgs.damageAmount > 0f)
-        {
-            StaticEventHandler.CallPlayerHitEvent();
-        }
     }
 
 

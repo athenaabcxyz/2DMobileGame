@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -88,6 +89,11 @@ public class Health : MonoBehaviour
         {
             currentHealth -= damageAmount;
             CallHealthEvent(damageAmount);
+
+            if (damageAmount >= 0)
+            {
+                StaticEventHandler.CallPlayerHitEvent();
+            }
 
             PostHitImmunity();
 
